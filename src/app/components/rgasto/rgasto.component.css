@@ -1,0 +1,30 @@
+.formulario input{
+    width: 30%;
+    margin: auto;
+    background-color: azure;
+}
+
+.formulario{
+    justify-content: center;
+}
+.formulario textarea{
+    width: 30%;
+    margin: auto;
+    background-color: azure;
+}
+.modal-title{
+    color:black;
+}
+.modal-body{
+    width:auto;
+}
+
+select{
+    width: 60vh;
+    margin: auto;
+}
+
+#terminar{
+    margin:4vh;
+    width: 20vh;
+}

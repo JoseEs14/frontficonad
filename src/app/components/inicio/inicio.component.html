@@ -1,0 +1,30 @@
+<cabecera></cabecera>
+<h1>Tus proyectos</h1>
+<table class="table" class="table table-bordered border-dark">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">ID Contrato</th>
+      <th scope="col">Alias</th>
+      <th scope="col">Presupuesto</th>
+      <th scope="col">Gastado</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of proyectos">
+      <th scope="row" class="col1">{{p.id_contrato}}</th>
+      <td class="col2">{{p.nombre}}</td>
+      <td class="col3">{{p.presupuesto}}</td>
+      <td class="col4">{{p.gastos}}</td>
+      <td class="col5"><button (click)="modificar(p.id)" type="button" class="btn btn-warning">Editar</button></td>
+      <td class="col5"><button (click)="eliminar(p.id)" type="button" class="btn btn-danger">Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
+<button type="button" class="btn btn-success" [routerLink]="['../robra']" [routerLinkActive]="['active']">Registrar
+  nuevo contrato ✍️</button>
+<button type="button" class="btn btn-success" [routerLink]="['../rconcepto']" [routerLinkActive]="['active']">Registrar
+  nuevo proyecto 📄</button>
+<button type="button" class="btn btn-success" [routerLink]="['../rgasto']" [routerLinkActive]="['active']">Registrar
+  gasto 💸</button>

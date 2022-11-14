@@ -1,0 +1,13 @@
+.px-3{
+    height:50vh;
+    background-image: url('images/analytics.jpg');
+}
+
+#titulo{
+    margin-top: 16vh;
+    color:rgb(33,37,41);
+}
+
+#lrnmore{
+    background-color: RGBA(13,110,253,var(--bs-bg-opacity,1))!important;
+}

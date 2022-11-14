@@ -1,0 +1,70 @@
+<header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <h1>FICONAD</h1>
+         
+        </a>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a [routerLink]="['../../reportexproy']" [routerLinkActive]="['active']" class="nav-link px-2 text-secondary">Ver gastos por proyecto 💰</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Ver gastos por contrato 💸</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Ayuda</a></li>
+        </ul>
+        
+
+        <div class="text-end">
+          <button type="button" class="btn btn-outline-light me-2">Iniciar sesión</button>
+          <button type="button" class="btn btn-warning" [routerLink]="['../users']" [routerLinkActive]="['active']">Registrarse</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<body class="d-flex h-100 text-center text-bg-dark">
+    <div id="f" class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+        <div class="formulario">
+            <main class="px-3">
+                <h2>Edita el registro de un proyecto ✏️</h2>
+            </main> <br>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Ingrese el nombre del proyecto</label>
+                <input [(ngModel)]="proyecto.nombre" type="text" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Ingrese el nombre del proyecto" maxlength="50" name="nombre">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Presupuesto del proyecto:</label>
+                <input [(ngModel)]="proyecto.presupuesto" type="number" pattern="[0-9]{1,9}" class="form-control"
+                    id="exampleFormControlInput1" placeholder="Ingrese el presupuesto" name="presupuesto">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Selecciona contrato al que pertenece el proyecto:</label>
+                <select [(ngModel)]="proyecto.id_contrato" (ngModelChange)="onValueChanged($event)"
+                    class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option [ngValue]="undefined" disabled>Selecciona un contrato</option>
+                    <option *ngFor="let c of contratos" [ngValue]="c.id">{{c.alias}}</option>
+                </select>
+            </div>
+            <div class="centerBtns">
+                <button type="button" id="terminar" (click)="modificar()" class="btn btn-success">Guardar</button>
+                <button type="button" id="terminar" class="btn btn-danger" [routerLink]="['../inicio']" [routerLinkActive]="['active']">Cancelar</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <footer class="mt-auto text-white-50">
+            <p> Contacta para mas informacion <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    class="text-white">Equipo TEAM</a>, by <a
+                    href="https://facebook.com/story.php?story_fbid=732908037299240&id=103914064693998"
+                    class="text-white">@equipoTeam</a>.</p>
+        </footer>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</body>

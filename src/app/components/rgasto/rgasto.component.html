@@ -1,0 +1,92 @@
+<cabecera></cabecera>
+
+<body class="d-flex h-100 text-center text-bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <div class="formulario">
+            <main class="px-3">
+                <h1>Registra un nuevo gasto aquí ✍️</h1>
+            </main> <br>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Concepto:</label>
+                <input [(ngModel)]="gasto.concepto" type="text" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Ingrese el nombre del concepto" maxlength="50" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Cantidad:</label>
+                <input [(ngModel)]="gasto.cantidad" type="number" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Ingrese la cantidad del concepto" required min="0">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Unidades</label>
+                <input [(ngModel)]="gasto.unidad" type="text" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Ingrese la unidad del concepto" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Proveedor</label>
+                <input [(ngModel)]="gasto.proveedor" type="text" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Ingrese el nombre del proveedor del concepto" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Importe:</label>
+                <input [(ngModel)]="gasto.importe" type="number" class="form-control" id="exampleFormControlInput1"
+                    min="0" placeholder="Ingrese el importe del concepto" min="0" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Fecha</label>
+                <input [(ngModel)]="gasto.fecha" class="form-control" type="date" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Observaciones del concepto</label>
+                <textarea [(ngModel)]="gasto.observaciones" class="form-control" id="exampleFormControlTextarea1"
+                    rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Selecciona metodo de pago:</label>
+                <select [(ngModel)]="gasto.id_pago" (ngModelChange)="onValueChanged1($event)"
+                    class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                    <option [ngValue]="undefined" disabled>Selecciona un metodo</option>
+                    <option *ngFor="let m of metodos" [ngValue]="m.id">{{m.nombre}}</option>
+                </select>
+                <button type="button" (click)="openPopup()" class="btn btn-primary">Agregar metodo de pago</button>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Selecciona el proyecto al que pertenece este
+                    gasto:</label>
+                <select [(ngModel)]="gasto.id_proyecto" (ngModelChange)="onValueChanged2($event)"
+                    class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                    <option [ngValue]="undefined" disabled>Selecciona un proyecto</option>
+                    <option *ngFor="let p of proyectos" [ngValue]="p.id">{{p.nombre}}</option>
+                </select>
+            </div>
+            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Ingrese de quien es la tarjeta</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input [(ngModel)]="metodo.nombre" type="text" class="form-control"
+                                id="exampleFormControlInput1" placeholder="Ingrese el nombre">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" (click)="agregarMetodo()" class="btn btn-primary">Agregar
+                                metodo</button>
+                            <button type="button" class="btn btn-danger" (click)="closePopup()">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="centerBtns">
+                <button (click)="agregar()"  id="terminar" type="button" class="btn btn-success">Añadir</button>
+                <button id="terminar" type="button" class="btn btn-danger" [routerLink]="['../inicio']" [routerLinkActive]="['active']">Cancelar</button>
+            </div>
+        </div>
+        <footer class="mt-auto text-white-50">
+            <p> Contacta para mas informacion <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    class="text-white">Equipo TEAM</a>, by <a
+                    href="https://facebook.com/story.php?story_fbid=732908037299240&id=103914064693998"
+                    class="text-white">@equipoTeam</a>.</p>
+        </footer>
+    </div>
+</body>

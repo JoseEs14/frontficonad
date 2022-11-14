@@ -1,0 +1,43 @@
+<cabecera></cabecera>
+<h1>Tus gastos por proyecto</h1>
+<div class="serch">
+  <input [(ngModel)]="proyecto.nombre" type="text" placeholder="Ingrese el nombre del proyecto" aria-label="Search">
+  <button type="button" (click)="buscar()" class="btn btn-primary">Buscar 🔎</button>
+</div>
+<h2 *ngIf="nombreescroto.length>0">Los gastos de {{nombreescroto}}</h2>
+<div id="div1">
+  <table class="table" class="table table-bordered border-dark">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">concepto</th>
+        <th scope="col">unidad</th>
+        <th scope="col">cantidad</th>
+        <th scope="col">importe</th>
+        <th scope="col">proveedor</th>
+        <th scope="col">fecha</th>
+        <th scope="col">observaciones</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let g of gastos">
+        <td>{{g.concepto}}</td>
+        <td>{{g.unidad}}</td>
+        <td>{{g.cantidad}}</td>
+        <td>{{g.importe}}</td>
+        <td>{{g.proveedor}}</td>
+        <td>{{g.fecha}}</td>
+        <td>{{g.observaciones}}</td>
+        <td class="col5"><button type="button" class="btn btn-warning">Editar</button></td>
+        <td class="col5"><button (click)="eliminar(g.id)" type="button" class="btn btn-danger">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="grafica">
+  <div class="chart-container">
+    <canvas id="MyChart">{{ chart }}</canvas>
+  </div>
+</div>

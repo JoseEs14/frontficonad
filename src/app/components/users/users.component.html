@@ -1,0 +1,34 @@
+<cabecera></cabecera> <br>
+
+<body class="d-flex h-100 text-center text-bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+        <div class="formulario">
+            <main class="px-3">
+                <h1>Administracion Financiera de construccion</h1>
+            </main> <br>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nombre del usuario</label>
+                <input [(ngModel)]="user.nombre" type="text" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Ingrese nombre del usuario">
+            </div>
+            <div class="centerBtns">
+                <button type="button" (click)="agregar()" class="btn btn-success">Registrar</button>
+                <button type="button" class="btn btn-danger">Cancelar</button>
+            </div>
+        </div>
+
+        <div class="formulario">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">{{user.nombre}}</label>
+            </div>
+        </div>
+
+        <footer class="mt-auto text-white-50">
+            <p> Contacta para mas informacion <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    class="text-white">Equipo TEAM</a>, by <a
+                    href="https://facebook.com/story.php?story_fbid=732908037299240&id=103914064693998"
+                    class="text-white">@equipoTeam</a>.</p>
+        </footer>
+    </div>
+</body>

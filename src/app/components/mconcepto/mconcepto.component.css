@@ -1,0 +1,15 @@
+.formulario{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    justify-content: center;
+}
+
+#terminar{
+    margin:4vh;
+    width: 20vh;
+}
+
+h1{
+    margin-right: 4vh;
+}

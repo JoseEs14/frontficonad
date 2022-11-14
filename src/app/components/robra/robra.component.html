@@ -1,0 +1,48 @@
+<cabecera></cabecera>
+
+<body class="d-flex h-100 text-center text-bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+        <div class="formulario">
+            <main class="px-3">
+                <h1>Registra un nuevo contrato aquí 📕</h1>
+            </main> <br>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">ID del contrato</label>
+                <input [(ngModel)]="contrato.id" type="text" id="disabledTextInput" class="form-control"
+                    placeholder="ID" maxlength="50">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Alias del contrato</label>
+                <input [(ngModel)]="contrato.alias" type="text" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Ingrese Descripcion" maxlength="50">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Inicio del contrato</label>
+                <input [(ngModel)]="contrato.f_inicio" class="form-control" type="date" placeholder="Fecha de inicio">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Fin del contrato</label>
+                <input [(ngModel)]="contrato.f_fin" class="form-control" type="date" placeholder="Fecha de inicio">
+            </div>
+            <div class="centerBtns">
+                <button id="terminar" type="button" (click)="agregar()" class="btn btn-success">Registrar</button>
+                <button id="terminar" type="button" class="btn btn-danger" [routerLink]="['../inicio']" [routerLinkActive]="['active']">Cancelar</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <footer class="mt-auto text-white-50">
+            <p> Contacta para mas informacion <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    class="text-white">Equipo TEAM</a>, by <a
+                    href="https://facebook.com/story.php?story_fbid=732908037299240&id=103914064693998"
+                    class="text-white">@equipoTeam</a>.</p>
+        </footer>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    
+</body>

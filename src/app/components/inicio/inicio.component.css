@@ -1,0 +1,14 @@
+table{
+    margin: auto;
+    width: 160vh;
+}
+h1{
+    margin:8vh;
+}
+button{
+    margin-left: 32vh;
+    margin-top: 4vh;
+}
+.col5 button{
+    margin: 0px 0px 0px  30%;
+}
