@@ -34,7 +34,6 @@ export class ProyectosService {
   }
   //Modificar un nombre
   updProyecto(id: String, proyecto: Proyecto) {
-    console.log(this.url + '/upd/' + id);
     console.log(this.http.put(this.url + 'upd',proyecto));
     return this.http.put(this.url + '/upd/'+id,proyecto);
     
