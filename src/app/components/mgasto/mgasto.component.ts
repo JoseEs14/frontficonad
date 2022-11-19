@@ -68,7 +68,7 @@ export class MgastoComponent implements OnInit {
       alert("Llene completamente los campos");
     } else {
       this.gs.updGasto(id_entrada, this.gasto).subscribe();
-      this.r.navigate(['/reportexproy']);
+      this.r.navigate(['']);
     }
   }
 

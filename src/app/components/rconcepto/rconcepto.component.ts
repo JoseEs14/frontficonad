@@ -28,8 +28,9 @@ export class RconceptoComponent implements OnInit {
       alert("Llene completamente los campos");
     }else{
       delete this.proyecto.id;
+      console.log(this.proyecto);
       this.ps.addProyecto(this.proyecto).subscribe();
-      window.location.reload();
+      this.r.navigate(['']);
     }
   }
 

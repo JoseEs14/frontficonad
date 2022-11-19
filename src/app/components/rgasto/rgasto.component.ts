@@ -36,7 +36,7 @@ export class RgastoComponent implements OnInit {
   }
 
   agregar() {
-    if(this.gasto.concepto=='' || this.gasto.id_pago==0 || this.gasto.id_proyecto==0 || this.gasto.proveedor=='' || this.gasto.importe==0){
+    if(this.gasto.id_proyecto==0){
       alert("Llene completamente los campos");
     }else{
       this.gs.addGasto(this.gasto).subscribe();
@@ -61,7 +61,7 @@ export class RgastoComponent implements OnInit {
   agregarMetodo() {
     delete this.metodo.id;
     this.ms.addMetodo(this.metodo).subscribe();
-    this.r.navigate(['/inicio']);
+    this.r.navigate(['']);
   }
 
   displayStyle = "none";

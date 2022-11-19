@@ -28,7 +28,7 @@ export class RobraComponent implements OnInit {
     }
     else{
       this.cs.addContrato(this.contrato).subscribe();
-      window.location.reload();
+      this.r.navigate(['']);
     }
   }
   
