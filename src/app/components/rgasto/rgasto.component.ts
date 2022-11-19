@@ -24,12 +24,9 @@ export class RgastoComponent implements OnInit {
   gasto: Gasto = {
     id: '',
     concepto: '',
-    cantidad: new Number(),
-    unidad: '',
     proveedor: '',
     importe: new Number(),
     fecha: new Date(),
-    observaciones: '',
     id_proyecto: new Number(),
     id_pago: new Number()
   };
@@ -39,7 +36,7 @@ export class RgastoComponent implements OnInit {
   }
 
   agregar() {
-    if(this.gasto.cantidad<=0 || this.gasto.concepto=='' || this.gasto.id_pago==0 || this.gasto.id_proyecto==0 || this.gasto.unidad=='' || this.gasto.proveedor=='' || this.gasto.importe==0){
+    if(this.gasto.concepto=='' || this.gasto.id_pago==0 || this.gasto.id_proyecto==0 || this.gasto.proveedor=='' || this.gasto.importe==0){
       alert("Llene completamente los campos");
     }else{
       this.gs.addGasto(this.gasto).subscribe();

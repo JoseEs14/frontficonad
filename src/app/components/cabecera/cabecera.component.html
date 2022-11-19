@@ -7,14 +7,12 @@
         </a>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a [routerLink]="['../reportexproy']" [routerLinkActive]="['active']" class="nav-link px-2 text-secondary">Ver gastos por proyecto 💰</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Ver gastos por contrato 💸</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Ayuda</a></li>
+          <li><a [routerLink]="['../reportexcon']" [routerLinkActive]="['active']" href="#" class="nav-link px-2 text-white">Ver gastos por contrato 💸</a></li>
+          <li><a [routerLink]="['../anomaly']" [routerLinkActive]="['active']" class="nav-link px-2 text-white">Ver Anomalías 🔎</a></li>
         </ul>
         
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Iniciar sesión</button>
-          <button type="button" class="btn btn-warning" [routerLink]="['../users']" [routerLinkActive]="['active']">Registrarse</button>
         </div>
       </div>
     </div>

@@ -38,6 +38,7 @@ export class MconceptoComponent implements OnInit {
   load() {
     this.proyectos.forEach(p => {
       Object.assign(this.proyecto, p);
+      console.log(this.proyecto)
     });
   }
   modificar() {
@@ -47,6 +48,7 @@ export class MconceptoComponent implements OnInit {
     } else {
       delete this.proyecto.id;
       this.ps.updProyecto(id_entrada, this.proyecto).subscribe();
+      this.r.navigate(['/inicio']);
     }
   }
 

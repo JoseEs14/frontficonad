@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Proyectog, ProyectosService } from 'src/app/services/proyectos.service';
-import Chart from 'chart.js/auto';
+import { Proyectog, Project, ProyectosService } from 'src/app/services/proyectos.service';
+import Chart, { ChartItem } from 'chart.js/auto';
 
 @Component({
   selector: 'dashboard',
@@ -8,16 +8,22 @@ import Chart from 'chart.js/auto';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  public chart: any;
+  public chart: any[];
   proyectos: Proyectog[];
+  project: Project[];
   labels: String[];
   gas: Number[];
   pres: Number[];
+  idg: string[];
+  g: boolean = false;
   constructor(private ps: ProyectosService) {
     this.proyectos = [];
     this.labels = [];
     this.gas = [];
     this.pres = [];
+    this.idg = [];
+    this.chart = [];
+    this.project = [];
   }
 
 
@@ -28,37 +34,51 @@ export class DashboardComponent implements OnInit {
   getProyectos() {
     this.ps.getProyectosgastos().subscribe(
       res => {
-        Object.assign(this.proyectos,res);
+        Object.assign(this.proyectos, res);
+        Object.assign(this.project, res);
         this.Val();
-        this.createChart();
       },
       err => console.log(err)
     );
   }
   Val() {
     this.proyectos.forEach((p) => {
-      console.log(p.nombre);
       this.labels.push(p.nombre!);
       this.gas.push(p.gastos);
       this.pres.push(p.presupuesto!);
+      this.idg.push(<string>p.nombre);
     });
   }
-  createChart() {
-    this.chart = new Chart("MyChart", {
+  createChart(id: String, i: number) {
+    var ctx: ChartItem;
+    ctx = <ChartItem>document.getElementById(<string>id);
+    console.log("///// dos")
+    console.log(i);
+    let aux: String[];
+    aux = [];
+    aux.push(this.labels[i]);
+    console.log(aux);
+    let auxPres: Number[] = [];
+    auxPres.push(this.pres[i]);
+    console.log(auxPres);
+    let auxGast: Number[] = [];
+    auxGast.push(this.gas[i]);
+    console.log(auxGast);
+    this.chart[i] = new Chart(ctx, {
       type: 'bar', //this denotes tha type of chart
 
       data: {// values on X-Axis
-        labels: this.labels,
+        labels: aux,
         datasets: [
           {
             label: "Presupuesto",
-            data: this.pres,
+            data: auxPres,
             backgroundColor: 'blue'
           },
           {
             label: "Gastado",
-            data: this.gas,
-            backgroundColor: 'limegreen'
+            data: auxGast,
+            backgroundColor: 'yellow'
           }
         ]
       },
@@ -67,6 +87,34 @@ export class DashboardComponent implements OnInit {
       }
 
     });
+  }
+  crear() {
+    var i = 0;
+    this.project.forEach((e) => {
+      if (this.isCheck(e.id, i)) {
+        if (this.project[i].graficar) {
+          this.createChart(e.nombre, i);
+        }
+      }
+      i++;
+    });
+  }
+
+  isCheck(name: string, index: number): boolean {
+    const checkbox = document.getElementById(name) as HTMLInputElement | null;
+    if (checkbox?.checked) {
+      this.project[index].graficar = true;
+      if (this.chart[index]) {
+        this.chart[index].destroy();
+      }
+      return true;
+    } else {
+      this.project[index].graficar = false;
+      if (this.chart[index]) {
+        this.chart[index].destroy();
+      }
+      return false;
+    }
   }
 
 }

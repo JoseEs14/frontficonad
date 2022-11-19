@@ -10,6 +10,9 @@ import { RgastoComponent} from './components/rgasto/rgasto.component';
 import { UsersComponent } from './components/users/users.component';
 import { ReportexproyComponent } from './components/reportexproy/reportexproy.component';
 import { MconceptoComponent } from './components/mconcepto/mconcepto.component';
+import { MgastoComponent } from './components/mgasto/mgasto.component';
+import { ReportexconComponent } from './components/reportexcon/reportexcon.component';
+import { AnomalyComponent } from './components/anomaly/anomaly.component';
 
 const appRoutes: Routes = [
   {path:'',redirectTo:'/inicio',pathMatch:'full'},
@@ -19,7 +22,10 @@ const appRoutes: Routes = [
   {path:'rgasto',component:RgastoComponent},
   {path:'users',component:UsersComponent},
   {path:'reportexproy',component:ReportexproyComponent},
+  {path:'reportexcon',component:ReportexconComponent},
+  {path:'anomaly',component:AnomalyComponent},
   {path:'mconcepto/:id',component:MconceptoComponent},
+  {path:'mgasto/:id',component:MgastoComponent},
   {path: '**', component:InicioComponent}
 ];
 

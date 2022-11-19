@@ -1,44 +1,62 @@
-<cabecera></cabecera>
+<header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <h1>FICONAD</h1>
+         
+        </a>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a [routerLink]="['../../reportexproy']" [routerLinkActive]="['active']" class="nav-link px-2 text-secondary">Ver gastos por proyecto 💰</a></li>
+          <li><a [routerLink]="['../../reportexcon']" [routerLinkActive]="['active']"href="#" class="nav-link px-2 text-white">Ver gastos por contrato 💸</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Ayuda</a></li>
+        </ul>
+        
+
+        <div class="text-end">
+        </div>
+      </div>
+    </div>
+  </header>
 
 <body class="d-flex h-100 text-center text-bg-dark">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <div class="formulario">
             <main class="px-3">
-                <h1>Registra un nuevo gasto aquí ✍️</h1>
+                <h1>Edita el registro de un proyecto aquí ✏️</h1>
             </main> <br>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Concepto:</label>
                 <input [(ngModel)]="gasto.concepto" type="text" class="form-control" id="exampleFormControlInput1"
-                    placeholder="Ingrese el nombre del concepto" maxlength="50">
+                    placeholder="Ingrese el nombre del concepto" maxlength="50" name="concepto">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Cantidad:</label>
                 <input [(ngModel)]="gasto.cantidad" type="number" class="form-control" id="exampleFormControlInput1"
-                    placeholder="Ingrese la cantidad del concepto" min="0">
+                    placeholder="Ingrese la cantidad del concepto" min="0" name="cantidad">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Unidades</label>
                 <input [(ngModel)]="gasto.unidad" type="text" class="form-control" id="exampleFormControlInput1"
-                    placeholder="Ingrese la unidad del concepto">
+                    placeholder="Ingrese la unidad del concepto" name="unidad">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Proveedor</label>
                 <input [(ngModel)]="gasto.proveedor" type="text" class="form-control" id="exampleFormControlInput1"
-                    placeholder="Ingrese el nombre del proveedor del concepto">
+                    placeholder="Ingrese el nombre del proveedor del concepto" name="proveedor">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Importe:</label>
                 <input [(ngModel)]="gasto.importe" type="number" class="form-control" id="exampleFormControlInput1"
-                    min="0" placeholder="Ingrese el importe del concepto" min="0">
+                    min="0" placeholder="Ingrese el importe del concepto" min="0" name="importe">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Fecha</label>
-                <input [(ngModel)]="gasto.fecha" class="form-control" type="date">
+                <input [(ngModel)]="gasto.fecha" class="form-control" type="date" name="fecha">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Observaciones del concepto</label>
                 <textarea [(ngModel)]="gasto.observaciones" class="form-control" id="exampleFormControlTextarea1"
-                    rows="3"></textarea>
+                    rows="3" name="observaciones"></textarea>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Selecciona metodo de pago:</label>
@@ -78,14 +96,14 @@
             </div>
 
             <div class="centerBtns">
-                <button (click)="agregar()"  id="terminar" type="button" class="btn btn-success">Añadir</button>
-                <button id="terminar" type="button" class="btn btn-danger" [routerLink]="['../inicio']" [routerLinkActive]="['active']">Cancelar</button>
+                <button (click)="modificar()"  id="terminar" type="button" class="btn btn-success">Guardar</button>
+                <button id="terminar" type="button" class="btn btn-danger" [routerLink]="['/inicio']" [routerLinkActive]="['active']">Cancelar</button>
             </div>
         </div>
         <footer class="mt-auto text-white-50">
-            <p> Contacta para mas informacion <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            <p> Contacta para mas informacion <a href=""
                     class="text-white">Equipo TEAM</a>, by <a
-                    href="https://facebook.com/story.php?story_fbid=732908037299240&id=103914064693998"
+                    href=""
                     class="text-white">@equipoTeam</a>.</p>
         </footer>
     </div>

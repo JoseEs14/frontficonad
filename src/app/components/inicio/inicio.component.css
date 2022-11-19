@@ -12,3 +12,9 @@ button{
 .col5 button{
     margin: 0px 0px 0px  30%;
 }
+.grafica{
+    margin: auto;
+    margin-top: 4vh;
+    width:60%;
+    height: 40vh;
+}

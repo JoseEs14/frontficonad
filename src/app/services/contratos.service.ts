@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ContratosService {
-  url = '/api/contrato';
+  url = 'https://backficonad-production.up.railway.app/api/contrato';
   constructor(private http: HttpClient) { }
 
   // get

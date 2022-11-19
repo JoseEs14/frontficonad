@@ -1,0 +1,55 @@
+.chart-container{
+    border-radius: 25px;
+    padding:7%;
+    padding-bottom: 2%;
+    margin: auto;
+    margin-top: 4%;
+    margin:4%;
+    width:80%;
+}
+
+.verde {
+    border: 8px solid rgb(11, 137, 21);
+}
+
+.amarillo {
+    border: 8px solid rgb(230, 240, 40);
+}
+
+.rojo{
+    border: 8px solid rgb(243, 10, 2);
+}
+
+#checks{
+    background-color: rgb(33,37,41);
+    color: white;
+    font-size: larger;
+    border-radius: 25px;
+    padding:4%;
+    margin-top: 4%;
+    width:120%;
+    height: 20vh;
+}
+
+.subt{
+    border-radius: 25px;
+    padding:7%;
+    margin: auto;
+    margin-top: 4%;
+    text-align: center;
+}
+
+#subtv{
+    background-color: rgb(11, 137, 21);
+    color:white;
+}
+
+#subta{
+    background-color: rgb(230, 240, 40);
+    color:black;
+}
+
+#subtr{
+    background-color: rgb(243, 10, 2);
+    color:white;
+}

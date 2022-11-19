@@ -7,14 +7,12 @@
         </a>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a [routerLink]="['../../reportexproy']" [routerLinkActive]="['active']" class="nav-link px-2 text-secondary">Ver gastos por proyecto 💰</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Ver gastos por contrato 💸</a></li>
+          <li><a [routerLink]="['../../reportexcon']" [routerLinkActive]="['active']" href="#" class="nav-link px-2 text-white">Ver gastos por contrato 💸</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Ayuda</a></li>
         </ul>
         
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Iniciar sesión</button>
-          <button type="button" class="btn btn-warning" [routerLink]="['../users']" [routerLinkActive]="['active']">Registrarse</button>
         </div>
       </div>
     </div>
@@ -25,7 +23,7 @@
 
         <div class="formulario">
             <main class="px-3">
-                <h2>Edita el registro de un proyecto ✏️</h2>
+                <h2>Edita el registro de un proyecto aquí ✏️</h2>
             </main> <br>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Ingrese el nombre del proyecto</label>
@@ -47,7 +45,7 @@
             </div>
             <div class="centerBtns">
                 <button type="button" id="terminar" (click)="modificar()" class="btn btn-success">Guardar</button>
-                <button type="button" id="terminar" class="btn btn-danger" [routerLink]="['../inicio']" [routerLinkActive]="['active']">Cancelar</button>
+                <button type="button" id="terminar" class="btn btn-danger" [routerLink]="['/inicio']" [routerLinkActive]="['active']">Cancelar</button>
             </div>
         </div>
         <br>
@@ -56,9 +54,9 @@
         <br>
         <br>
         <footer class="mt-auto text-white-50">
-            <p> Contacta para mas informacion <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            <p> Contacta para mas informacion <a href=""
                     class="text-white">Equipo TEAM</a>, by <a
-                    href="https://facebook.com/story.php?story_fbid=732908037299240&id=103914064693998"
+                    href=""
                     class="text-white">@equipoTeam</a>.</p>
         </footer>
         <br>

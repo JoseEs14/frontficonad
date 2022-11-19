@@ -29,6 +29,18 @@ h2{
 .grafica{
     margin: auto;
     margin-top: 4vh;
-    width:80%;
-    height: 40vh;
+    width:60%;
+    height: 30vh;
+}
+
+#subt{
+    margin-top:4%;
+}
+
+#vacio{
+    text-align: center;
+    width: 100%;
+}
+#ojito{
+    font-size: 1000%;
 }

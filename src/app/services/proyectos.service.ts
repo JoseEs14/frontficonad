@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProyectosService {
-  url = '/api/proyecto';
+  url = 'https://backficonad-production.up.railway.app/api/proyecto';
   constructor(private http: HttpClient) { }
 
   // get
@@ -19,6 +19,10 @@ export class ProyectosService {
   //get gastos de proyecto
   getProyectosgastos() {
     return this.http.get(this.url + '/cong');
+  }
+  //get datos para las graficas de proyecto
+  getProyectosgraficas() {
+    return this.http.get(this.url + '/congr');
   }
   //Agregar un nombre
   addProyecto(proyecto: Proyecto) {
@@ -46,7 +50,16 @@ export interface Proyecto{
 export interface Proyectog{
   id:string;
   nombre:String;
-  presupuesto?:Number;
+  presupuesto:number;
   id_contrato?:String;
   gastos:Number;
+}
+
+export interface Project{
+  id:string;
+  nombre:String;
+  presupuesto:number;
+  id_contrato?:String;
+  gastos:Number;
+  graficar:boolean;
 }

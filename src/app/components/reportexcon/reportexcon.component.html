@@ -1,16 +1,17 @@
 <cabecera></cabecera>
-<h1>Tus gastos por proyecto 📁</h1>
+<h1>Tus gastos por contrato 📄</h1>
 <div class="serch">
-  <input [(ngModel)]="proyecto.nombre" (keydown.enter)="buscar()" type="text" placeholder="Ingrese el nombre del proyecto" aria-label="Search">
+  <input [(ngModel)]="contrato.alias" (keydown.enter)="buscar()" type="text"
+    placeholder="Ingrese el nombre del contrato" aria-label="Search">
   <button type="button" (click)="buscar()" class="btn btn-primary">Buscar 🔎</button>
 </div>
 <div *ngIf="nombreescroto.length==0" id="vacio">
   <h1 id="ojito">👁️‍🗨️</h1>
-  <h2 >Aquí puede buscar un proyecto y ver cómo se comportan sus gastos</h2>
+  <h2>Aquí puede buscar un contrato y ver cómo se comportan sus gastos</h2>
 </div>
 <h2 *ngIf="bv">No se encontro nada👁️‍🗨️</h2>
 <div *ngIf="nombreescroto.length>0 && !bv" id="div1">
-  <h2 >Los gastos de {{nombreescroto}}</h2>
+  <h2>Los gastos de {{nombreescroto}}</h2>
   <table class="table" class="table table-bordered border-dark">
     <thead class="table-dark">
       <tr>
@@ -40,7 +41,12 @@
     </tbody>
   </table>
 </div>
-<h2 id="subt" *ngIf="nombreescroto.length>0 && !bv">Así se ven los gastos de este proyecto</h2>
+<div *ngIf="nombreescroto.length>0 && !bv" id="anoma">
+  <h3>Las anomalias de {{nombreescroto}} son : </h3>
+  <td class="col5"><button (click)="Anomalias()" type="button" class="btn btn-warning">anomalias</button></td>
+  <p id="values"></p>
+</div>
+<h2 id="subt" *ngIf="nombreescroto.length>0 && !bv">Así se ven los gastos de este contrato</h2>
 <div class="grafica">
   <div class="chart-container">
     <canvas id="MyChart">{{ chart }}</canvas>

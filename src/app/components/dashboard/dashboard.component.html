@@ -1,3 +1,22 @@
-<div class="chart-container">
-    <canvas  id="MyChart" >{{ chart }}</canvas>
+<h2>¿Quieres ver alguna gráfica? 📊</h2>
+<div  id="checks">
+  <div *ngFor="let p of proyectos" class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id={{p.id}} value={{p.id}} (click)="crear()">
+    <label class="form-check-label" for={{p.id}}>{{p.nombre}}</label>
+  </div>
+  <button (click)="crear()"  class="btn btn-info">Gráficar</button>
 </div>
+
+<ng-container *ngFor="let p of project">
+  <div *ngIf="p.graficar==true" [ngClass]="{
+      'verde' : p.gastos <= (0.6*p.presupuesto),
+      'amarillo' : p.gastos > (0.6*p.presupuesto) && p.gastos <= (0.8*p.presupuesto),
+      'rojo' : p.gastos > (0.85*p.presupuesto)
+    }" class="chart-container">
+    <h2>{{p.nombre}}</h2>
+    <canvas id={{p.nombre}}>{{ chart }}</canvas>
+    <h5 id="subtv" class="subt" *ngIf="p.gastos <= (0.6*p.presupuesto)">Este proyecto va muy bien en el aspecto financiero 👍</h5>
+    <h5 id="subta" class="subt" *ngIf="p.gastos > (0.6*p.presupuesto) && p.gastos <= (0.8*p.presupuesto)">Este proyecto se está acercando a su techo presupuestal 👀</h5>
+    <h5 id="subtr" class="subt" *ngIf="p.gastos > (0.85*p.presupuesto)">Este proyecto está al limite del techo presupuestal 👎</h5>
+  </div>
+</ng-container>

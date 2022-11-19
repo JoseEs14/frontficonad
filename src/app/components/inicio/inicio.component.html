@@ -15,8 +15,8 @@
     <tr *ngFor="let p of proyectos">
       <th scope="row" class="col1">{{p.id_contrato}}</th>
       <td class="col2">{{p.nombre}}</td>
-      <td class="col3">{{p.presupuesto}}</td>
-      <td class="col4">{{p.gastos}}</td>
+      <td class="col3">$ {{p.presupuesto}}</td>
+      <td class="col4">$ {{p.gastos}}</td>
       <td class="col5"><button (click)="modificar(p.id)" type="button" class="btn btn-warning">Editar</button></td>
       <td class="col5"><button (click)="eliminar(p.id)" type="button" class="btn btn-danger">Eliminar</button></td>
     </tr>
@@ -28,3 +28,7 @@
   nuevo proyecto 📄</button>
 <button type="button" class="btn btn-success" [routerLink]="['../rgasto']" [routerLinkActive]="['active']">Registrar
   gasto 💸</button>
+
+<div class="grafica">
+  <dashboard></dashboard>
+</div>

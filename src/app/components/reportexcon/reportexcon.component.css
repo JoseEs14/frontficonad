@@ -1,0 +1,55 @@
+h1 {
+    margin: 5vh;
+}
+
+h2 {
+    margin-bottom: 3vh;
+    margin-top: 2vh;
+    margin-left: 21vh;
+}
+
+.serch {
+    margin: auto;
+    width: 60%;
+    align-items: flex;
+}
+
+.serch input {
+    width: 80%;
+    margin: 1vh;
+}
+
+#anoma {
+    margin: auto;
+    margin-top: 4vh;
+    width: 40%;
+    height: 10vh;
+}
+
+#div1 {
+    margin: auto;
+    margin-top: 4vh;
+    overflow: scroll;
+    width: 80%;
+    height: 40vh;
+}
+
+.grafica {
+    margin: auto;
+    margin-top: 4vh;
+    width: 60%;
+    height: 30vh;
+}
+
+#subt {
+    margin-top: 4%;
+}
+
+#vacio {
+    text-align: center;
+    width: 100%;
+}
+
+#ojito {
+    font-size: 1000%;
+}
